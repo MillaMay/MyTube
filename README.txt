@@ -1,0 +1,1 @@
+This is only the client side. Designed in the OS Linux (Ubuntu). Not all files have been uploaded.
