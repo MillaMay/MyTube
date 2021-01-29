@@ -1,0 +1,763 @@
+/*1% = 10px - по высоте*/
+html, body, div, span, p, img, video, form, label, h1, h2, h3, h4, h5 {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;                              /* обнуляем отступы и убираем бордюры */
+	vertical-align: baseline;          /* приводим все к одной базовой линии */
+	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+	font-size: 100%;
+}
+
+html {
+	min-height: 100%;/*всегда показывать вертикальную полосу прокрутки*/
+}
+
+body {
+	/*font-size: 1em; используем безопасные шрифтовые CSS стеки*/
+	min-height: 100%;
+}
+
+#wrapper {
+	width: 100%;
+	max-width: 1920px;
+	margin: 0 auto;	
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	overflow: hidden;/*Чтобы внизу в браузере не появлялась полоса прокрутки*/
+}
+
+div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+a {
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	outline: none;
+}
+
+video {
+	outline: none;
+	height: auto;
+}
+
+img {
+	max-width:100%;
+	height: auto;
+}
+
+button {
+	cursor: pointer;/*Отображение курсора в виде руки*/
+	background-color: transparent;
+	border: none;
+	padding: 0;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner {/* CSS3 ?*/
+	border: 0;
+}/*Убирает рамку при активации*/
+
+input, select, button, textarea {
+	margin: 0; 				
+	font-size: 100%;/*размер шрифтов везде одинаковый*/
+	outline: none;
+}
+
+input {
+	width: 100%;
+	height: auto;
+	padding: 5px 0 5px 5px;
+	box-sizing: border-box;/* CSS3 */
+}
+
+input[type="submit"] {
+	cursor: pointer;
+}
+
+hr {
+	transform: scaleY(0.5);/* CSS3 */
+}
+
+#headerDiv, #main, #footerDiv {
+	width: inherit;
+}
+								/* HEADER */
+#headerDiv {
+	position: relative;
+	height: 50px;
+	background-color:#575958;
+}
+
+#logoDiv, #searchDiv {
+	position: absolute;
+	top: 10px;
+}
+
+#logoDiv {
+	width: 7%;
+	left: 2%;
+}
+
+.logo {
+	margin-bottom: 5px;
+	color: red;
+	font-size: 21px;
+	font-weight: bold;
+	text-shadow: 1px 1px 5px red, 1px 1px 10px black;
+}
+
+#searchDiv {
+	width: 30%;
+	right: 35%;
+}
+
+.search_logo {
+	position: absolute;
+	padding-top: 2px;
+	top: 13px;
+	left: 65%;
+}
+
+.search_form {
+	border: 1px solid #808080;	
+}
+
+.search_input {
+	background-color: #141715;
+	border: none;
+	color: #e6e8e6;
+	font-size: 15px;
+}
+
+#login_inDiv {
+	float: right;
+	margin-right: 1%;
+}
+
+#ava_inDiv {
+	width: 26%;
+	float: left;
+	margin-right: 5%;
+	position: relative;
+}
+
+.nickname_in {
+	color: black;
+	font-weight: bold;
+	font-size: 14px;
+}
+/*----------------------------ВЫПАДАЮЩЕЕ ОКНО------------------------------*/
+ul {
+	list-style: none;
+}
+
+.topmenu li {
+	position: relative;
+	bottom: 7px;
+}
+
+.submenu {
+	visibility: hidden;
+	position: absolute;
+	left: 35px;
+	top: 25px;
+}
+
+.topmenu li:hover .submenu {
+	visibility: visible;
+}
+/*-------------------------------------------------------------------------*/
+.out_in {
+	color: red;
+	font-weight: bold;
+	font-size: 17px;
+	text-shadow: 1px 1px 5px red; 
+}
+
+#loginDiv {
+	float: right;
+	margin-right: 2%;
+	margin-top: 10px;
+}
+
+.login_button, .button_subscribe {
+	border: 1px solid black;
+	border-radius: 5px;
+	background-color: black;
+	font-weight: bold;
+	height: 30px;
+	padding: 0 5px;
+}
+
+.login_button {
+	font-size: 17px;
+	color: white;
+	text-shadow: 1px 1px 15px white;
+}
+								/* INDEX */
+#main {
+	height: 100%;
+	background-color: #272927;
+	color: white;
+	padding-top: 1%;
+}
+
+#frameDiv {
+	margin-left: 1%;
+	width: 31.986111111%;
+	padding-bottom: 2%;
+}
+
+#titleDiv {
+	margin-top: 0.5%;
+	margin-left: 2%;
+	width: 87.5%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; /* CSS3 */
+}
+
+.frame_title, .related_title, span.nickname {
+	color: #e3e8e5;
+	font-weight: bold;
+}
+
+.channel_title {
+	color: #c4c4c4;	
+	white-space: normal;/*выводится полностью с переносом на след. строку*/
+}
+
+#avatarDiv {
+	background-image: url(img/ava.png);
+	float: left;
+	width: 10.416666668%;
+}
+								/* WATCH */
+#watchDiv {
+	width: 70%;
+}
+
+.watch_video {
+	width: 97%;
+	margin-left: 2%;
+	padding-right: 1%;
+}
+
+#infoDiv, #subscribeDiv, #commentsDiv {
+	width: 95%;
+	margin-left: 2%;
+	padding: 1% 1%;
+	margin-top: 0.5%;
+}
+
+#infoDiv {
+	background-color: #23332e;
+	position: relative;
+}
+
+.tags {
+	color: #00fc93;
+}
+
+span.frame_title {
+	color: white;
+}
+
+.views, .sum_subscribe {
+	color: #c4c4c4;
+	font-style: italic;
+}
+
+.views {
+	display: inline-block;
+	margin-top: 1%;
+	white-space: nowrap;/*Чтобы дата не ушла на новую строку!*/
+}
+
+.date_creation {
+	font-weight: bold;
+	margin-left: 5%;
+	font-style: normal;
+}
+
+#likeDiv, #dislikeDiv {
+	position: absolute;
+	left: 74%; /*Рядом с этим отступом будет блок с качеством видео*/
+	top: 56%;
+	width: 5%;
+}
+
+#dislikeDiv {
+	margin-left: 9%;
+}
+
+.button_like:active {
+	box-shadow: 5px 5px 5px red; /* CSS3 */
+}
+
+.sum {/*В этом классе на всякий случай указаны еще подклассы*/
+	position: absolute;
+	margin-top: 10%;
+	margin-left: 5%;
+	color: #a09e9e;
+	font-weight: bold;
+}
+
+#subscribeDiv {
+	background-color: #32423d;
+}
+
+#avaDiv {
+	float: left;
+	width: 3.906250001%;
+}
+
+span.nickname {
+	margin-left: 1%;
+}
+
+.sum_subscribe {
+	display: block;
+	margin-top: 0.5%;
+	float: left;
+	margin-left: 1%;
+}
+
+#buttonSubscribeDiv {
+	float: right;
+	margin-right: 1%;
+	margin-top: -1%;/*Плохая величина*/
+}
+
+.button_subscribe {
+	font-size: 13px;
+	color: red;
+	text-shadow: 1px 1px 15px red;
+}
+
+#descriptionDiv {
+	float: left;
+	margin: 2% 0 1% 5%;
+	width: 38.5%;/*42.5% - половина от видео*/
+	clear: left;
+}
+
+.description, .text_comments {				/*Этот блок надо скрывать и открывать*/
+	display: block;
+	margin: 0;
+	color: white;
+	font-weight: lighter;
+}
+
+hr {/* Нет класса */
+	margin-top: 0.5%;
+	width: 96.8%;
+	margin-left: 2%;
+	color: #32423d;
+}
+
+.sum_comments {
+	margin-left: 2%;
+	color: white;
+	font-weight: bold;
+}
+
+.form_comments {
+	margin-left: 2%;
+	margin-top: 2%;
+}
+
+.input_comments {
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid #32423d;
+	color: white;
+	font-style: italic;
+	width: 99%;
+	margin-bottom: 0.5%;
+	padding-left: 0;
+}
+
+.input_comments:focus {
+	border-bottom: 1px solid black;
+}
+
+.button_comments_yes, .button_comments_no {
+	float: right;
+	margin-right: 1%;
+	border: none;
+	padding: 0.5%;
+}
+
+.button_comments_yes:active, .button_comments_no:active {
+	box-shadow: 1px 1px 5px black;/* CSS3 */
+}
+
+.button_comments_yes {
+	background-color: #32423d;
+	color: #e3e8e5;
+}
+
+.button_comments_no {
+	background-color: #23332e;
+	color: #a09e9e;
+}
+
+.comments_time {
+	float: none;
+	display: inline;
+}
+
+.text_comments {	
+	float: left;
+	margin-top: -1.5%;/*Плохая величина*/
+	width: 95%;
+	margin-left: 5%;
+	padding-right: 1%;
+}
+
+#like_comments {
+	position: relative;
+	margin-top: 1%;
+	margin-left: 5%;
+	width: 3%;
+}
+ 
+.comments_like:active {
+	background-color: red;
+}
+
+.sum_comments_like {
+	position: absolute;
+	top: 10%;
+	margin-left: 10%;
+	color: #a09e9e;
+	font-weight: bold;
+}
+								/* RELATED */
+#relatedDiv{
+	width: 30%;
+	float: right;
+}
+
+.related_frame {/*Уменьшение самой картинки*/
+	width: 35%;
+	margin-bottom: 0.5%;
+}
+
+#relatedInfoDiv {
+	float: right;
+	width: 58.5%;
+	padding-right: 5.5%;
+	padding-left: 1%;
+}
+
+.related_channel {
+	display: block;
+	width: 50%;
+	color: #c4c4c4;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; /* CSS3 */
+}
+								/* TAGS */
+#tagsDiv {
+	width: 70%;
+	margin-left: 15%;
+}
+
+#tagsDiv:first-child {
+	margin-top: 1.5%;
+}
+
+.sum_video {
+	display: block;
+	margin-bottom: 1%;
+	color: #a09e9e;
+	font-weight: bold;
+	text-align: right;
+	background-color: #363836;
+	padding: 0.5% 0;
+	padding-right: 1%;
+}
+
+#backgroundDiv {
+	width: 100%;
+	background-color: #363836;
+	padding-top: 0.5%;
+	margin-bottom: 1%;
+}
+
+#tagsFrameDiv {
+	float: left;
+	width: 35%;
+	clear: left;
+}
+
+#tagsInfoDiv {
+	float: right;
+	width: 63%;
+	vertical-align: top;
+	padding-right: 1%;
+}
+
+.tag_title, .tag_channel, .tag_description {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis; /* CSS3 */
+} 
+
+.tag_channel {
+	color: #e3e8e5;
+}
+
+.tag_description {
+	margin-top: 4%;
+	color: #808080;
+}
+
+.tag_views {
+	margin-top: 1.5%;
+	font-weight: bold;
+}
+
+.tag_days {
+	margin-left: 5%;
+}
+								/* CHANNEL */
+#themeDiv {
+	position: relative;
+	width: 86%;/*Таков размер картинки в процентах в данном блоке, когда сама картинка 100% ширины*/
+	margin: 0.5% 0 1% 7%;
+}
+
+.theme_title {
+	position: absolute;
+	left: 1%;
+	top: 5%;
+	background-color:#575958;
+	padding: 0.3% 0.5%;
+	color: black;
+	text-shadow: 1px 1px 5px white;/* CSS3 */
+	font-weight: bold;
+}
+
+#userDiv {
+	float: left;
+	margin-left: 7%;
+	width: 19%;
+	padding-left: 1%;
+	padding-bottom: 1%;
+}
+
+#avaChannelDiv {
+	width: 25%;	
+}
+
+#nicknameChannelDiv {
+	color: white;
+	font-weight: bold;
+	width: 70%;
+	margin-left: 1%;
+}
+
+.channel_subscribe {
+	margin-top: 10%;
+	height: auto;/*Дает возможность при ссуживании ширины не оставлять большие падинги*/
+	padding: 2.5% 1.5%;
+}
+
+.channel_sum_subscribe, .content_info {
+	margin-left: 1.5%;
+	color: #e3e8e5;
+	font-style: italic;
+	font-weight: bold;
+}
+
+.date_created {
+	margin-top: 15%;
+	font-style: italic;
+	color: #c4c4c4;
+}
+								/* CONTENT */
+#contentChannelDiv {
+	float: right;
+	margin-right: 7%;
+	margin-left: 8%;
+	width: 58%;
+}
+
+#contentInfoDiv {
+	vertical-align: top;
+	width: 63.5%;
+	margin-left: 0.5%;
+}
+
+.content_frame {
+	width: 35%;
+	margin-bottom: 0.5%;
+}
+
+.content_title {
+	vertical-align: top;
+	color: #e3e8e5;
+	font-weight: bold;
+}
+
+.content_info {
+	margin-left: 0;
+	padding-bottom: 1%;
+	font-weight: normal;
+	color: #c4c4c4;
+}
+								/* SEARCH */
+.search_page, #formLoginDiv {
+	display: block;
+	text-align: center;
+}
+
+.search_not {
+	font-style: italic;
+	font-weight: bold;
+	color: #a09e9e;
+	margin-bottom: 3%;
+}
+								/* LOGIN (all) */
+#formLoginDiv {
+	padding-bottom: 0.5%;
+}
+
+.sign_in {
+	margin-bottom: 0.5%;
+}
+
+.login_pass {
+	font-style: italic;
+	width: 33%;
+	border: none;
+	background-color: #c4c4c4;
+	color: black;
+	margin-bottom: 0.5%;
+}
+
+.submit_login {
+	width: 5%;
+	border: 1px solid white;
+	background-color: black;
+	color: white;
+	padding: 0;
+	padding-bottom: 0.4%;
+	padding-top: 0.4%;
+	margin-top: 0.2%;
+}
+
+.div_link {
+	width: 17%;	
+	border: none;
+}
+
+.check_link {
+	padding-left: 0.9%;
+	padding-right: 0.9%;
+	color: #a09e9e;
+}
+
+.check_link:hover {
+	color: red;
+}
+
+.description_input {
+	font-style: italic;
+	margin-bottom: 0.5%;
+}
+
+.file_in {
+	padding: 0;
+	background-color: transparent;
+	color: #a09e9e;
+	font-style: normal;
+}
+
+.date_in {
+	width: 3%;
+}
+
+.p_input {
+	margin-bottom: 0.5%;
+	padding-top: 0.5%;
+	color: #a09e9e;	
+}
+
+.bad {
+	color: #808080;
+}
+								/* BUTTON_TREND */
+#trendDiv {
+	float: right;
+	margin-right: 1.5%;
+	margin-bottom: 0.5%;
+}
+
+.button_trend {
+	color: red;
+	font-size: 20px;
+}
+
+.button_trend:hover {
+	color:white;
+	border: 1px solid black;
+	box-shadow: 1px 1px 10px black; /* CSS3 */
+}
+								/* FOOTER */
+#footerDiv {
+	padding: 1% 0;
+	background-color: /*#272927;*/#141715;
+	height: 100vh;/*Чтобы футер заполнял всю высоту*/
+}
+/*Потом добавить медиазапросы, т.е. полноценный адаптив сделать*/
+@media screen and (min-width: 320px) {
+
+	img {
+		width: auto;
+	}
+
+	#wrapper, #main, #headerDiv, #footerDiv {
+		width: 100%;
+		min-height: initial;/*Устанавливает значение свойства в значение по умолчанию*/
+		font-size: 1.1vw;
+	}
+
+	#nicknameChannelDiv, .channel_subscribe, .description_input, .p_input {
+		font-size: 1vw;
+	}
+
+	.button_comments_yes, .button_comments_no, .text_comments, .content_title {
+		font-size: 0.95vw;
+	}
+
+	.tags, .input_comments, .sum_video, .submit_login {
+		font-size: 0.90vw;
+	}
+
+	.channel_title, .related_title, span.nickname, .description {
+		font-size: 0.85vw;
+	}
+
+	.date_created, .content_info, .bad {
+		font-size: 0.80vw;
+	}
+
+	.related_channel, .views, .sum_comments, .channel_sum_subscribe {
+		font-size: 0.75vw;
+	}
+
+	.sum_subscribe, .sum, .sum_comments_like { 
+		font-size: 0.70vw;
+	}
+}
+/*У меня получилась пока резиновая верстка, а не адаптивная*/
